@@ -22,6 +22,11 @@ const PlaneIcon = () => (
     <path d="M21 4 3 11l6 2.2L18 7l-6.8 7.4L17.5 20z" /><path d="m11.2 14.4-.2 5.1 2.6-3.3" />
   </svg>
 );
+const ProfileIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="4" width="18" height="16" rx="3" /><circle cx="9" cy="11" r="2.2" /><path d="M5.8 16.5c.6-1.6 1.8-2.4 3.2-2.4s2.6.8 3.2 2.4M15 9.5h3M15 13h3" />
+  </svg>
+);
 const LinkIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1" /><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1" />
@@ -180,13 +185,14 @@ export function Bento() {
 
       {site.links.map((l) => (
         <a key={l.href} className="tile rowt w4 h1" href={l.href} target="_blank" rel="noopener">
-          {l.label === "Telegram" ? (
-            <span className="ic tg"><PlaneIcon /></span>
-          ) : (
-            <span className="ic"><LinkIcon /></span>
-          )}
-          <span className="lbl"><b>{l.label === "Telegram" ? t("b.tg") : l.label}</b><small>{l.handle}</small></span>
-          <span className="pill">{t("b.msg")}</span>
+          <span className="ic">
+            {l.label === "Telegram" ? <PlaneIcon /> : l.label === "LinkedIn" ? <ProfileIcon /> : <LinkIcon />}
+          </span>
+          <span className="lbl">
+            <b>{l.label === "Telegram" ? t("b.tg") : l.label === "LinkedIn" ? t("b.li") : l.label}</b>
+            <small>{l.handle}</small>
+          </span>
+          <span className="pill">{l.label === "LinkedIn" ? t("b.lib") : t("b.msg")}</span>
         </a>
       ))}
 
