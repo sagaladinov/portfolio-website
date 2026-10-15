@@ -177,14 +177,14 @@ export function Bento() {
       <section className="bento" aria-label={t("b.contacts")}>
 
       {/* Контакты — четыре компактные плитки в один ряд */}
-      <button type="button" className="tile ct w1 h2" onClick={copyMail} aria-label={`${t("b.ct.mail")}: ${site.email}`}>
+      <button type="button" className="tile ct w1 h1" onClick={copyMail} aria-label={`${t("b.ct.mail")}: ${site.email}`}>
         <span className="ic"><MailIcon /></span>
         <span className="ct-k">{t("b.ct.mail")}</span>
         <span className="ct-v" title={site.email}>{copied ? `✓ ${t("c.copied")}` : site.email}</span>
         <span className="ct-hint">{t("c.copy")}</span>
       </button>
       {site.links.map((l) => (
-        <a key={l.href} className="tile ct w1 h2" href={l.href} target="_blank" rel="noopener">
+        <a key={l.href} className="tile ct w1 h1" href={l.href} target="_blank" rel="noopener">
           <Arrow />
           <span className="ic">{l.label === "Telegram" ? <PlaneIcon /> : l.label === "LinkedIn" ? <ProfileIcon /> : <LinkIcon />}</span>
           <span className="ct-k">{l.label}</span>
@@ -192,14 +192,14 @@ export function Bento() {
         </a>
       ))}
       {cv ? (
-        <a className="tile ct w1 h2" href={cv} target="_blank" rel="noopener">
+        <a className="tile ct w1 h1" href={cv} target="_blank" rel="noopener">
           <Arrow />
           <span className="ic"><DocIcon /></span>
           <span className="ct-k">{t("b.cv")}</span>
           <span className="ct-v">{t("b.cvs")}</span>
         </a>
       ) : (
-        <div className="tile ct w1 h2">
+        <div className="tile ct w1 h1">
           <span className="ic"><DocIcon /></span>
           <span className="ct-k">{t("b.cv")}</span>
           <span className="ct-v">{t("b.soon")}</span>
