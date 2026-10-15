@@ -130,8 +130,9 @@ export const T = dict as unknown as Record<Lang, Record<string, Entry>>;
 export const site = {
   name: "Sultan Sagaladinov",
   email: "sagaladinovsultan@gmail.com",
-  // Положите PDF в /public/cv.pdf и поставьте "/cv.pdf". Пока null — кнопка ведёт к контактам.
-  cvUrl: null as string | null,
+  // Резюме: две версии. Положите PDF в /public и укажите пути. Пока null — кнопка «Скоро».
+  // Если одной версии нет, кнопка покажет ту, что есть.
+  cvUrl: { ru: "/cv-ru.pdf", en: "/cv-en.pdf" } as { ru: string | null; en: string | null },
   // Фото: положите файл в /public/avatar.jpg и поставьте "/avatar.jpg". Пока null — круг с инициалом.
   avatar: "/avatar-square.jpg" as string | null,
   // Добавьте ссылки, когда будут готовы: они появятся в блоке контакта.

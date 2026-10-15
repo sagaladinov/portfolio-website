@@ -30,7 +30,8 @@ const LinkIcon = () => (
 
 /** Сетка плиток. Размер плитки: w1/w2/w4 — ширина в колонках, h1/h2 — высота (h2 = квадрат). */
 export function Bento() {
-  const { t, list } = useLang();
+  const { t, list, lang } = useLang();
+  const cv = site.cvUrl[lang] ?? site.cvUrl[lang === "ru" ? "en" : "ru"];
   const [copied, setCopied] = useState(false);
 
   async function copyMail() {
@@ -192,8 +193,8 @@ export function Bento() {
       <div className="tile rowt w4 h1">
         <span className="ic"><DocIcon /></span>
         <span className="lbl"><b>{t("b.cv")}</b><small>{t("b.cvs")}</small></span>
-        {site.cvUrl ? (
-          <a className="pill" href={site.cvUrl} target="_blank" rel="noopener">{t("b.cvb")}</a>
+        {cv ? (
+          <a className="pill" href={cv} target="_blank" rel="noopener">{t("b.cvb")}</a>
         ) : (
           <span className="pill ghost">{t("b.soon")}</span>
         )}
