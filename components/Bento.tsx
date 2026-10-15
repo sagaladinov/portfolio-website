@@ -176,35 +176,35 @@ export function Bento() {
       <h2 className="sec">{t("b.contacts")}</h2>
       <section className="bento" aria-label={t("b.contacts")}>
 
-      {/* Контакты — строки как в link-in-bio */}
-      <div className="tile rowt w4 h1">
+      {/* Контакты — четыре компактные плитки в один ряд */}
+      <button type="button" className="tile ct w1 h2" onClick={copyMail} aria-label={`${t("b.ct.mail")}: ${site.email}`}>
         <span className="ic"><MailIcon /></span>
-        <span className="lbl"><b>{t("b.mail")}</b><small>{site.email}</small></span>
-        <button type="button" className="pill" onClick={copyMail}>{copied ? t("c.copied") : t("c.copy")}</button>
-      </div>
-
+        <span className="ct-k">{t("b.ct.mail")}</span>
+        <span className="ct-v" title={site.email}>{copied ? `✓ ${t("c.copied")}` : site.email}</span>
+        <span className="ct-hint">{t("c.copy")}</span>
+      </button>
       {site.links.map((l) => (
-        <a key={l.href} className="tile rowt w4 h1" href={l.href} target="_blank" rel="noopener">
-          <span className="ic">
-            {l.label === "Telegram" ? <PlaneIcon /> : l.label === "LinkedIn" ? <ProfileIcon /> : <LinkIcon />}
-          </span>
-          <span className="lbl">
-            <b>{l.label === "Telegram" ? t("b.tg") : l.label === "LinkedIn" ? t("b.li") : l.label}</b>
-            <small>{l.handle}</small>
-          </span>
-          <span className="pill">{l.label === "LinkedIn" ? t("b.lib") : t("b.msg")}</span>
+        <a key={l.href} className="tile ct w1 h2" href={l.href} target="_blank" rel="noopener">
+          <Arrow />
+          <span className="ic">{l.label === "Telegram" ? <PlaneIcon /> : l.label === "LinkedIn" ? <ProfileIcon /> : <LinkIcon />}</span>
+          <span className="ct-k">{l.label}</span>
+          <span className="ct-v">{l.label === "LinkedIn" ? "in/sagaladinov" : l.handle}</span>
         </a>
       ))}
-
-      <div className="tile rowt w4 h1">
-        <span className="ic"><DocIcon /></span>
-        <span className="lbl"><b>{t("b.cv")}</b><small>{t("b.cvs")}</small></span>
-        {cv ? (
-          <a className="pill" href={cv} target="_blank" rel="noopener">{t("b.cvb")}</a>
-        ) : (
-          <span className="pill ghost">{t("b.soon")}</span>
-        )}
-      </div>
+      {cv ? (
+        <a className="tile ct w1 h2" href={cv} target="_blank" rel="noopener">
+          <Arrow />
+          <span className="ic"><DocIcon /></span>
+          <span className="ct-k">{t("b.cv")}</span>
+          <span className="ct-v">{t("b.cvs")}</span>
+        </a>
+      ) : (
+        <div className="tile ct w1 h2">
+          <span className="ic"><DocIcon /></span>
+          <span className="ct-k">{t("b.cv")}</span>
+          <span className="ct-v">{t("b.soon")}</span>
+        </div>
+      )}
 
       <p className="foot-note">© {new Date().getFullYear()} {t("p.name")} · {t("f.loc")} · <Link href="/terms">{t("f.terms")}</Link></p>
     </section>

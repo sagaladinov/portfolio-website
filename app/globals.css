@@ -117,6 +117,15 @@ a.tile:hover,button.tile:hover{box-shadow:var(--shadow-hover);transform:translat
 
 .tile.qmeta .s{max-width:22ch}
 .stage > .wrap.section{padding-top:clamp(56px,8vw,96px)}
+/* compact contact tiles */
+button.tile{font:inherit;color:inherit;text-align:left;cursor:pointer}
+.tile.ct{padding:16px;gap:0;justify-content:flex-start}
+.tile.ct .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:var(--on-ink);background:var(--ink);margin-bottom:auto}
+.tile.ct .ic svg{width:20px;height:20px}
+.tile.ct .arrow{top:12px;right:12px;width:26px;height:26px;font-size:12px}
+.ct-k{display:block;line-height:1.3;font-size:15px;font-weight:600;letter-spacing:-.01em;margin-top:14px}
+.ct-hint{position:absolute;top:14px;right:14px;font-size:11px;font-weight:600;color:var(--ink-2);padding:4px 8px;border-radius:999px;background:var(--tile-2)}
+.ct-v{display:block;line-height:1.4;max-width:100%;font-size:12.5px;color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 /* section titles inside bento */
 .bento-wrap{display:flex;flex-direction:column;min-width:0}
 .sec{font-size:15px;font-weight:600;letter-spacing:-.01em;color:var(--ink-2);padding:0 4px;margin:40px 0 14px;line-height:1.2}
