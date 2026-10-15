@@ -127,10 +127,23 @@ button.tile{font:inherit;color:inherit;text-align:left;cursor:pointer}
 .ct-v{display:block;line-height:1.35;min-width:0;font-size:12px;color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;align-self:start}
 /* contacts — вариант B: круглые иконки + кнопка резюме */
 .crow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.crow .round{all:unset;cursor:pointer;width:48px;height:48px;border-radius:50%;background:var(--tile);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;place-items:center;color:var(--ink);transition:transform .2s,box-shadow .2s}
-.crow .round:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.crow .round{all:unset;cursor:pointer;box-sizing:border-box;height:48px;min-width:48px;padding:0 14px;border-radius:999px;background:var(--tile);border:1px solid var(--line);box-shadow:var(--shadow);display:inline-flex;align-items:center;color:var(--ink);transition:box-shadow .25s,transform .25s,background .25s}
+.crow .round:hover,.crow .round:focus-visible{box-shadow:var(--shadow-hover);transform:translateY(-2px)}
 .crow .round:focus-visible,.cvbtn:focus-visible{outline:2px solid var(--link);outline-offset:3px}
-.crow .round svg{width:20px;height:20px}
+.crow .ri{display:grid;place-items:center;width:22px;height:22px;margin:0 -2px;flex:none;overflow:hidden}
+.crow .ri svg{width:18px;height:18px}
+.crow .rl{max-width:0;opacity:0;overflow:hidden;white-space:nowrap;font-size:13px;font-weight:600;transition:max-width .4s cubic-bezier(.2,.8,.2,1),opacity .25s,margin .4s cubic-bezier(.2,.8,.2,1)}
+.crow .round:hover .rl,.crow .round:focus-visible .rl,.crow .round.is-done .rl{max-width:220px;opacity:1;margin-left:8px;margin-right:2px}
+.crow .round.is-done{background:var(--ink);color:var(--on-ink)}
+/* иконки оживают при наведении */
+.r-mail:hover .ri svg{animation:mail-wiggle .6s ease}
+.r-tg:hover .ri svg{animation:plane-fly .7s cubic-bezier(.3,.7,.3,1)}
+.r-li:hover .ri svg{animation:card-pop .5s ease}
+@keyframes mail-wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-12deg)}50%{transform:rotate(9deg)}75%{transform:rotate(-5deg)}}
+@keyframes plane-fly{0%{transform:translate(0,0)}45%{transform:translate(9px,-9px);opacity:0}46%{transform:translate(-9px,9px);opacity:0}100%{transform:translate(0,0);opacity:1}}
+@keyframes card-pop{0%,100%{transform:scale(1)}40%{transform:scale(1.22) rotate(-4deg)}70%{transform:scale(.95)}}
+@media (hover:none){.crow .round:not(.is-done) .rl{max-width:0;opacity:0;margin:0}}
+@media (prefers-reduced-motion:reduce){.crow .ri svg{animation:none!important}}
 .copied-note{font-size:13px;color:var(--ink-2)}
 .cvbtn{margin-left:auto;display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:999px;background:var(--ink);color:var(--on-ink);font-weight:600;font-size:14px;transition:filter .2s}
 .cvbtn:hover{filter:brightness(.88)}
@@ -366,6 +379,6 @@ button.tile{font:inherit;color:inherit;text-align:left;cursor:pointer}
 }
 @media (max-width:520px){
   .crow{gap:8px}
-  .crow .round{width:44px;height:44px}
+  .crow .round{height:44px;min-width:44px;padding:0 12px}
   .cvbtn{padding:12px 14px;font-size:13px}
 }

@@ -175,17 +175,20 @@ export function Bento() {
       {/* ===== Контакты ===== */}
       <h2 className="sec">{t("b.contacts")}</h2>
       <div className="crow">
-        <button type="button" className="round" onClick={copyMail} aria-label={`${t("b.ct.mail")}: ${site.email}`} title={copied ? t("c.copied") : site.email}>
-          {copied ? (
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
-          ) : <MailIcon />}
+        <button type="button" className={`round r-mail${copied ? " is-done" : ""}`} onClick={copyMail} aria-label={`${t("c.copymail")}: ${site.email}`}>
+          <span className="ri">
+            {copied ? (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+            ) : <MailIcon />}
+          </span>
+          <span className="rl" role={copied ? "status" : undefined}>{copied ? t("c.copied") : t("c.copymail")}</span>
         </button>
         {site.links.map((l) => (
-          <a key={l.href} className="round" href={l.href} target="_blank" rel="noopener" aria-label={l.label} title={l.handle}>
-            {l.label === "Telegram" ? <PlaneIcon /> : l.label === "LinkedIn" ? <ProfileIcon /> : <LinkIcon />}
+          <a key={l.href} className={`round ${l.label === "Telegram" ? "r-tg" : "r-li"}`} href={l.href} target="_blank" rel="noopener" aria-label={`${l.label}: ${l.handle}`}>
+            <span className="ri">{l.label === "Telegram" ? <PlaneIcon /> : l.label === "LinkedIn" ? <ProfileIcon /> : <LinkIcon />}</span>
+            <span className="rl">{l.label === "LinkedIn" ? "in/sagaladinov" : l.handle}</span>
           </a>
         ))}
-        {copied && <span className="copied-note" role="status">{t("c.copied")}</span>}
         {cv ? (
           <a className="cvbtn" href={cv} target="_blank" rel="noopener"><DocIcon />{t("b.cvdl")}</a>
         ) : (
