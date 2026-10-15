@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useLang } from "./LangProvider";
 import { LangToggle } from "./LangToggle";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function CaseTopbar() {
   const { t } = useLang();
@@ -10,7 +11,7 @@ export function CaseTopbar() {
     <nav className="topbar" aria-label="Case">
       <div className="wrap">
         <Link href="/" className="back"><i aria-hidden="true">←</i>{t("case.back")}</Link>
-        <LangToggle />
+        <div className="ctrls"><LangToggle /><ThemeToggle /></div>
       </div>
     </nav>
   );

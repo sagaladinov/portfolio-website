@@ -3,7 +3,7 @@ import { CaseTopbar, CaseFooter } from "@/components/CaseChrome";
 import { QmetaCase } from "@/components/QmetaCase";
 
 export const metadata: Metadata = {
-  title: "qmeta — кейс · Sultan",
+  title: "qmeta — кейс · Sultan Sagaladinov",
   description: "Необанк на базе Halyk BaaS: карта мерчантов, QR-оплата и геймификация транзакций.",
 };
 

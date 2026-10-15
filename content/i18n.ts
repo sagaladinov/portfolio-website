@@ -7,16 +7,18 @@ export type Skill = [string, string, string, string];
 
 const dict = {
 ru:{
- "p.role":"Product Manager",
- "p.bio":"Единственный PM в кросс-функциональной команде Rama. Веду четыре продукта в FinTech, MedTech и Beauty-tech от идеи до релиза.\n\nИнженерный бэкграунд, поэтому говорю с разработкой на одном языке. Ищу роль PM в продуктовой команде.",
- "b.q.t":"Необанк, который превращает покупки в игру","b.q.s":"Halyk BaaS · карта мерчантов · QR-оплата · геймификация","b.open":"Читать кейс",
+ "p.name":"Султан Сагаладинов","p.role":"Проектный менеджер",
+ "p.bio":"Я проектный менеджер с 2-летним опытом превращения амбициозных идей в успешные цифровые продукты.\n\nРуководил AI-платформой для MedTech (SaaS) от discovery до пилотного внедрения в 20+ клиниках: привлёк первых платящих клиентов и выстроил регулярную выручку. Довёл 4 цифровых продукта от идеи до запуска в FinTech, MedTech и BeautyTech.",
+ "b.q.t":"Необанк, который превращает покупки в игру","b.q.s":"Карта мерчантов · QR-оплата · геймификация","b.open":"Читать кейс",
  "b.st.t":"Открыт к предложениям","b.st.s":"Астана · Remote · Relocation",
  "b.n1":"продукта в портфеле","b.n2":"индустрии",
- "b.a.s":"AI-платформа для врачей. Воронка GA4, 16 этапов разработки, гипотеза Telegram mini app",
- "b.b.s":"Маркетплейс бьюти-услуг. MVP из 6 блоков, карта салонов, пилот с салоном",
- "b.v.s":"Парки развлечений. Редизайн, система достижений, детский профиль",
- "b.sk":"Что я делаю","b.skl":["Discovery","WBS и декомпозиция","Интеграции и API","GA4 и воронки","Геймификация","Запуск в App Store","Маркетплейсы"],
- "b.mail":"Написать на почту","b.cv":"Резюме","b.cvs":"PDF, 1 страница","b.cvb":"Скачать","b.soon":"Скоро",
+ "b.a.t":"AI-ассистент для врачей","b.a.s":"38 клиник · 52 врача · 3 региона Казахстана","b.a.f1":"Аудиоанализ","b.a.f2":"Диаризация","b.a.f3":"Готовый отчёт",
+ "b.b.t":"Маркетплейс бьюти-услуг","b.b.s":"MVP из 6 блоков, карта салонов, пилот",
+ "b.v.t":"Парки развлечений в одном приложении","b.v.s":"Редизайн, достижения, детский профиль",
+ "b.projects":"Проекты","b.int":"Стажировки","b.kl":"Куала-Лумпур",
+ "i1.when":"апр 2024 – авг 2024","i1.l":["Помогал команде Business Development: решал проблемы и делал лендинги и страницы офферов","Улучшил внутренний сайт Atlas, чтобы им было удобно пользоваться разным отделам"],
+ "i2.when":"дек 2023 – фев 2024","i2.l":["Участвовал в создании админ-панели для приложения OkOk","Вёл маркетинг и соцсети приложения OkOk"],"b.edu":"Образование","b.edu.k":"Бакалавриат","b.edu.loc":"Куала-Лумпур, Малайзия","b.edu.deg":"B.Sc. Computer Science · специализация Mobile Development","b.cert.k":"Сертификаты","b.about":"Обо мне","b.contacts":"Контакты","b.sk":"Что я делаю","b.skl":["Discovery","WBS и декомпозиция","Интеграции и API","GA4 и воронки","Геймификация","Запуск в App Store","Маркетплейсы"],
+ "b.tg":"Написать в Telegram","b.msg":"Написать","b.mail":"Написать на почту","b.cv":"Резюме","b.cvs":"PDF, 1 страница","b.cvb":"Скачать","b.soon":"Скоро",
  "case.back":"Все проекты","case.more":"Вернуться к проектам",
  "nav.work":"Кейсы","nav.skills":"Навыки","nav.contact":"Контакт",
  "cta.cv":"CV","cta.work":"Смотреть кейсы","cta.cv2":"Скачать CV",
@@ -26,7 +28,7 @@ ru:{
  "st.1":"продукта в портфеле одновременно","st.2":"индустрии: FinTech, MedTech, Beauty-tech","st.3":"PM на всю кросс-функциональную команду","st.4":"инженерный бэкграунд: говорю с разработкой на одном языке",
  "q.kicker":"qmeta · FinTech","q.title":"Необанк, который превращает покупки в игру.",
  "q.lede":"Мобильный банк и карта мерчантов на базе Halyk BaaS. Каждая оплата становится сигналом для персональных наград и заданий.",
- "q.t1":"Роль","q.v1":"Product Manager. От ТЗ до публикации в App Store",
+ "q.t1":"Роль","q.v1":"Проектный менеджер. От ТЗ до публикации в App Store",
  "q.t2":"Команда","q.v2":"Tech lead, 2 системных аналитика, инфобезопасность, разработка",
  "q.t3":"Скоуп","q.v3":"Мобильное приложение из 5 модулей и админ-панель с ролями",
  "q.t4":"Интеграция","q.v4":"Halyk BaaS через site-to-site IPsec VPN",
@@ -59,20 +61,22 @@ ru:{
   ["Геймификация и удержание","Лутбоксы, ачивки, статусы и цепочки заданий с оплатой партнёром за результат.","qmeta · Avatariya","#qmeta"],
   ["Маркетплейсы и запуск","MVP-скоуп, комиссионная модель, пилот с партнёром, публикация в App Store.","Beautobe · qmeta","#work"]
  ],
- "c.h":"Давайте поговорим.","c.lede":"Ищу роль Product Manager в продуктовой команде. Отвечу в течение дня.",
- "c.copy":"Скопировать","c.copied":"Скопировано","c.cv":"CV в PDF — скоро","f.loc":"Астана, Казахстан"
+ "c.h":"Давайте поговорим.","c.lede":"Ищу роль проектного менеджера в продуктовой команде. Отвечу в течение дня.",
+ "c.copy":"Скопировать","c.copied":"Скопировано","c.cv":"CV в PDF — скоро","f.loc":"Астана, Казахстан","f.terms":"Условия использования"
 },
 en:{
- "p.role":"Product Manager",
- "p.bio":"The only PM on a cross-functional team at Rama. I take four products in FinTech, MedTech and Beauty-tech from idea to release.\n\nI have an engineering background, so I speak the team's language. Looking for a PM role on a product team.",
- "b.q.t":"A neobank that turns purchases into a game","b.q.s":"Halyk BaaS · merchant map · QR payments · gamification","b.open":"Read the case",
+ "p.name":"Sultan Sagaladinov","p.role":"Project Manager",
+ "p.bio":"I am a Project Manager with 2 years of experience turning ambitious ideas into successful digital products.\n\nI've led an AI-powered MedTech SaaS platform from discovery to pilot deployment across 20+ clinics, securing its first paying customers and establishing recurring revenue. Successfully delivered 4 digital products end-to-end across FinTech, MedTech, and BeautyTech.",
+ "b.q.t":"A neobank that turns purchases into a game","b.q.s":"Merchant map · QR payments · gamification","b.open":"Read the case",
  "b.st.t":"Open to offers","b.st.s":"Astana · Remote · Relocation",
  "b.n1":"products in the portfolio","b.n2":"industries",
- "b.a.s":"AI platform for doctors. GA4 funnel, 16 build stages, a Telegram mini app hypothesis",
- "b.b.s":"Beauty services marketplace. 6-block MVP, salon map, a salon pilot",
- "b.v.s":"Amusement parks app. Redesign, achievements, a child profile",
- "b.sk":"What I do","b.skl":["Discovery","WBS and decomposition","Integrations and APIs","GA4 and funnels","Gamification","App Store launch","Marketplaces"],
- "b.mail":"Email me","b.cv":"Resume","b.cvs":"PDF, 1 page","b.cvb":"Download","b.soon":"Soon",
+ "b.a.t":"An AI assistant for doctors","b.a.s":"38 clinics · 52 doctors · 3 regions of Kazakhstan","b.a.f1":"Audio capture","b.a.f2":"Diarization","b.a.f3":"Ready report",
+ "b.b.t":"A beauty services marketplace","b.b.s":"6-block MVP, salon map, pilot",
+ "b.v.t":"Amusement parks in one app","b.v.s":"Redesign, achievements, child profile",
+ "b.projects":"Projects","b.int":"Internships","b.kl":"Kuala Lumpur",
+ "i1.when":"Apr 2024 – Aug 2024","i1.l":["Supported the Business Development team by resolving issues and delivering landing and offer pages","Enhanced the internal website (Atlas), improving usability across departments"],
+ "i2.when":"Dec 2023 – Feb 2024","i2.l":["Played an integral role in building the admin panel for the OkOk app","Led marketing initiatives, managing social media for the OkOk app"],"b.edu":"Education","b.edu.k":"Bachelor's degree","b.edu.loc":"Kuala Lumpur, Malaysia","b.edu.deg":"B.Sc. Computer Science · Mobile Development track","b.cert.k":"Certifications","b.about":"About","b.contacts":"Contact","b.sk":"What I do","b.skl":["Discovery","WBS and decomposition","Integrations and APIs","GA4 and funnels","Gamification","App Store launch","Marketplaces"],
+ "b.tg":"Message me on Telegram","b.msg":"Message","b.mail":"Email me","b.cv":"Resume","b.cvs":"PDF, 1 page","b.cvb":"Download","b.soon":"Soon",
  "case.back":"All projects","case.more":"Back to projects",
  "nav.work":"Work","nav.skills":"Skills","nav.contact":"Contact",
  "cta.cv":"CV","cta.work":"See the work","cta.cv2":"Download CV",
@@ -82,7 +86,7 @@ en:{
  "st.1":"products in the portfolio at once","st.2":"industries: FinTech, MedTech, Beauty-tech","st.3":"PM for the whole cross-functional team","st.4":"engineering background, so I speak the team's language",
  "q.kicker":"qmeta · FinTech","q.title":"A neobank that turns purchases into a game.",
  "q.lede":"A mobile bank and merchant map built on Halyk BaaS. Every payment becomes a signal for personal rewards and quests.",
- "q.t1":"Role","q.v1":"Product Manager. From spec to App Store release",
+ "q.t1":"Role","q.v1":"Project Manager. From spec to App Store release",
  "q.t2":"Team","q.v2":"Tech lead, 2 system analysts, infosec, engineering",
  "q.t3":"Scope","q.v3":"Mobile app with 5 modules and a role-based admin panel",
  "q.t4":"Integration","q.v4":"Halyk BaaS over a site-to-site IPsec VPN",
@@ -115,8 +119,8 @@ en:{
   ["Gamification and retention","Loot boxes, achievements, statuses and quest chains where partners pay for results.","qmeta · Avatariya","#qmeta"],
   ["Marketplaces and launch","MVP scope, commission model, a partner pilot, App Store release.","Beautobe · qmeta","#work"]
  ],
- "c.h":"Let's talk.","c.lede":"I'm looking for a Product Manager role on a product team. I reply within a day.",
- "c.copy":"Copy","c.copied":"Copied","c.cv":"PDF CV coming soon","f.loc":"Astana, Kazakhstan"
+ "c.h":"Let's talk.","c.lede":"I'm looking for a Project Manager role on a product team. I reply within a day.",
+ "c.copy":"Copy","c.copied":"Copied","c.cv":"PDF CV coming soon","f.loc":"Astana, Kazakhstan","f.terms":"Terms & Conditions"
 }};
 
 export type Entry = string | string[] | Skill[];
@@ -124,15 +128,15 @@ export const T = dict as unknown as Record<Lang, Record<string, Entry>>;
 
 /** Настройки сайта */
 export const site = {
-  name: "Sultan",
+  name: "Sultan Sagaladinov",
   email: "sagaladinovsultan@gmail.com",
   // Положите PDF в /public/cv.pdf и поставьте "/cv.pdf". Пока null — кнопка ведёт к контактам.
   cvUrl: null as string | null,
   // Фото: положите файл в /public/avatar.jpg и поставьте "/avatar.jpg". Пока null — круг с инициалом.
-  avatar: null as string | null,
+  avatar: "/avatar-square.jpg" as string | null,
   // Добавьте ссылки, когда будут готовы: они появятся в блоке контакта.
   links: [
     // { label: "LinkedIn", handle: "in/sultan", href: "https://www.linkedin.com/in/..." },
-    // { label: "Telegram", handle: "@username", href: "https://t.me/..." },
+    { label: "Telegram", handle: "@sula373", href: "https://t.me/sula373" },
   ] as { label: string; handle: string; href: string }[],
 };
