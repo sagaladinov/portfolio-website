@@ -7,6 +7,17 @@ export type Skill = [string, string, string, string];
 
 const dict = {
 ru:{
+ "p.role":"Product Manager",
+ "p.bio":"Единственный PM в кросс-функциональной команде Rama. Веду четыре продукта в FinTech, MedTech и Beauty-tech от идеи до релиза.\n\nИнженерный бэкграунд, поэтому говорю с разработкой на одном языке. Ищу роль PM в продуктовой команде.",
+ "b.q.t":"Необанк, который превращает покупки в игру","b.q.s":"Halyk BaaS · карта мерчантов · QR-оплата · геймификация","b.open":"Читать кейс",
+ "b.st.t":"Открыт к предложениям","b.st.s":"Астана · Remote · Relocation",
+ "b.n1":"продукта в портфеле","b.n2":"индустрии",
+ "b.a.s":"AI-платформа для врачей. Воронка GA4, 16 этапов разработки, гипотеза Telegram mini app",
+ "b.b.s":"Маркетплейс бьюти-услуг. MVP из 6 блоков, карта салонов, пилот с салоном",
+ "b.v.s":"Парки развлечений. Редизайн, система достижений, детский профиль",
+ "b.sk":"Что я делаю","b.skl":["Discovery","WBS и декомпозиция","Интеграции и API","GA4 и воронки","Геймификация","Запуск в App Store","Маркетплейсы"],
+ "b.mail":"Написать на почту","b.cv":"Резюме","b.cvs":"PDF, 1 страница","b.cvb":"Скачать","b.soon":"Скоро",
+ "case.back":"Все проекты","case.more":"Вернуться к проектам",
  "nav.work":"Кейсы","nav.skills":"Навыки","nav.contact":"Контакт",
  "cta.cv":"CV","cta.work":"Смотреть кейсы","cta.cv2":"Скачать CV",
  "hero.status":"Открыт к предложениям · Астана · Remote · Relocation",
@@ -52,6 +63,17 @@ ru:{
  "c.copy":"Скопировать","c.copied":"Скопировано","c.cv":"CV в PDF — скоро","f.loc":"Астана, Казахстан"
 },
 en:{
+ "p.role":"Product Manager",
+ "p.bio":"The only PM on a cross-functional team at Rama. I take four products in FinTech, MedTech and Beauty-tech from idea to release.\n\nI have an engineering background, so I speak the team's language. Looking for a PM role on a product team.",
+ "b.q.t":"A neobank that turns purchases into a game","b.q.s":"Halyk BaaS · merchant map · QR payments · gamification","b.open":"Read the case",
+ "b.st.t":"Open to offers","b.st.s":"Astana · Remote · Relocation",
+ "b.n1":"products in the portfolio","b.n2":"industries",
+ "b.a.s":"AI platform for doctors. GA4 funnel, 16 build stages, a Telegram mini app hypothesis",
+ "b.b.s":"Beauty services marketplace. 6-block MVP, salon map, a salon pilot",
+ "b.v.s":"Amusement parks app. Redesign, achievements, a child profile",
+ "b.sk":"What I do","b.skl":["Discovery","WBS and decomposition","Integrations and APIs","GA4 and funnels","Gamification","App Store launch","Marketplaces"],
+ "b.mail":"Email me","b.cv":"Resume","b.cvs":"PDF, 1 page","b.cvb":"Download","b.soon":"Soon",
+ "case.back":"All projects","case.more":"Back to projects",
  "nav.work":"Work","nav.skills":"Skills","nav.contact":"Contact",
  "cta.cv":"CV","cta.work":"See the work","cta.cv2":"Download CV",
  "hero.status":"Open to offers · Astana · Remote · Relocation",
@@ -106,9 +128,11 @@ export const site = {
   email: "sagaladinovsultan@gmail.com",
   // Положите PDF в /public/cv.pdf и поставьте "/cv.pdf". Пока null — кнопка ведёт к контактам.
   cvUrl: null as string | null,
+  // Фото: положите файл в /public/avatar.jpg и поставьте "/avatar.jpg". Пока null — круг с инициалом.
+  avatar: null as string | null,
   // Добавьте ссылки, когда будут готовы: они появятся в блоке контакта.
   links: [
-    // { label: "LinkedIn", href: "https://www.linkedin.com/in/..." },
-    // { label: "Telegram", href: "https://t.me/..." },
-  ] as { label: string; href: string }[],
+    // { label: "LinkedIn", handle: "in/sultan", href: "https://www.linkedin.com/in/..." },
+    // { label: "Telegram", handle: "@username", href: "https://t.me/..." },
+  ] as { label: string; handle: string; href: string }[],
 };

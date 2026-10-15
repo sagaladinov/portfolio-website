@@ -15,10 +15,16 @@ npm run build    # проверка перед деплоем
 | Что | Где |
 |---|---|
 | Все тексты RU/EN | `content/i18n.ts` → объект `dict` |
-| Email, CV, LinkedIn/Telegram | `content/i18n.ts` → объект `site` |
-| Цвета, шрифты, отступы | `app/globals.css` → блок `:root` |
-| Секции страницы | `components/*.tsx`, порядок в `app/page.tsx` |
+| Email, CV, фото, LinkedIn/Telegram | `content/i18n.ts` → объект `site` |
+| Цвета, шрифт, радиусы | `app/globals.css` → блок `:root` |
+| Левая колонка (фото, имя, био) | `components/Profile.tsx` |
+| Плитки главной: порядок и размер | `components/Bento.tsx` |
+| Страница кейса qmeta | `app/work/qmeta/page.tsx`, `components/QmetaCase.tsx` |
 | Экраны телефона qmeta | `components/PhoneScreens.tsx` |
+
+**Размер плитки** задаётся классами: `w1`/`w2`/`w4` — ширина в колонках (из 4), `h1`/`h2`/`h3`/`h4` — высота (`w2 h2` — стандартная плитка, `w4 h1` — строка как кнопка контакта). Чтобы переставить плитки, просто поменяйте порядок блоков в `Bento.tsx`.
+
+**Фото:** положите `public/avatar.jpg` и поставьте `avatar: "/avatar.jpg"` в `site`.
 
 **CV:** положите файл в `public/cv.pdf` и поставьте `cvUrl: "/cv.pdf"` в `site`.
 
