@@ -174,40 +174,27 @@ export function Bento() {
 
       {/* ===== Контакты ===== */}
       <h2 className="sec">{t("b.contacts")}</h2>
-      <section className="bento" aria-label={t("b.contacts")}>
+      <div className="crow">
+        <button type="button" className="round" onClick={copyMail} aria-label={`${t("b.ct.mail")}: ${site.email}`} title={copied ? t("c.copied") : site.email}>
+          {copied ? (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+          ) : <MailIcon />}
+        </button>
+        {site.links.map((l) => (
+          <a key={l.href} className="round" href={l.href} target="_blank" rel="noopener" aria-label={l.label} title={l.handle}>
+            {l.label === "Telegram" ? <PlaneIcon /> : l.label === "LinkedIn" ? <ProfileIcon /> : <LinkIcon />}
+          </a>
+        ))}
+        {copied && <span className="copied-note" role="status">{t("c.copied")}</span>}
+        {cv ? (
+          <a className="cvbtn" href={cv} target="_blank" rel="noopener"><DocIcon />{t("b.cvdl")}</a>
+        ) : (
+          <span className="cvbtn ghost"><DocIcon />{t("b.cv")} · {t("b.soon")}</span>
+        )}
+      </div>
 
-      {/* Контакты — четыре компактные плитки в один ряд */}
-      <button type="button" className="tile ct w1 h1" onClick={copyMail} aria-label={`${t("b.ct.mail")}: ${site.email}`}>
-        <span className="ic"><MailIcon /></span>
-        <span className="ct-k">{t("b.ct.mail")}</span>
-        <span className="ct-v" title={site.email}>{copied ? `✓ ${t("c.copied")}` : site.email}</span>
-        <span className="ct-hint">{t("c.copy")}</span>
-      </button>
-      {site.links.map((l) => (
-        <a key={l.href} className="tile ct w1 h1" href={l.href} target="_blank" rel="noopener">
-          <Arrow />
-          <span className="ic">{l.label === "Telegram" ? <PlaneIcon /> : l.label === "LinkedIn" ? <ProfileIcon /> : <LinkIcon />}</span>
-          <span className="ct-k">{l.label}</span>
-          <span className="ct-v">{l.label === "LinkedIn" ? "in/sagaladinov" : l.handle}</span>
-        </a>
-      ))}
-      {cv ? (
-        <a className="tile ct w1 h1" href={cv} target="_blank" rel="noopener">
-          <Arrow />
-          <span className="ic"><DocIcon /></span>
-          <span className="ct-k">{t("b.cv")}</span>
-          <span className="ct-v">{t("b.cvs")}</span>
-        </a>
-      ) : (
-        <div className="tile ct w1 h1">
-          <span className="ic"><DocIcon /></span>
-          <span className="ct-k">{t("b.cv")}</span>
-          <span className="ct-v">{t("b.soon")}</span>
-        </div>
-      )}
+      <p className="foot-note solo">© {new Date().getFullYear()} {t("p.name")} · {t("f.loc")} · <Link href="/terms">{t("f.terms")}</Link></p>
 
-      <p className="foot-note">© {new Date().getFullYear()} {t("p.name")} · {t("f.loc")} · <Link href="/terms">{t("f.terms")}</Link></p>
-    </section>
     </div>
   );
 }

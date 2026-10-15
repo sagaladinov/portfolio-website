@@ -125,6 +125,18 @@ button.tile{font:inherit;color:inherit;text-align:left;cursor:pointer}
 .tile.ct .arrow,.tile.ct .ct-hint{display:none}
 .ct-k{display:block;line-height:1.25;font-size:14px;font-weight:600;letter-spacing:-.01em;align-self:end}
 .ct-v{display:block;line-height:1.35;min-width:0;font-size:12px;color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;align-self:start}
+/* contacts — вариант B: круглые иконки + кнопка резюме */
+.crow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.crow .round{all:unset;cursor:pointer;width:48px;height:48px;border-radius:50%;background:var(--tile);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;place-items:center;color:var(--ink);transition:transform .2s,box-shadow .2s}
+.crow .round:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.crow .round:focus-visible,.cvbtn:focus-visible{outline:2px solid var(--link);outline-offset:3px}
+.crow .round svg{width:20px;height:20px}
+.copied-note{font-size:13px;color:var(--ink-2)}
+.cvbtn{margin-left:auto;display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:999px;background:var(--ink);color:var(--on-ink);font-weight:600;font-size:14px;transition:filter .2s}
+.cvbtn:hover{filter:brightness(.88)}
+.cvbtn svg{width:16px;height:16px}
+.cvbtn.ghost{background:var(--tile-2);color:var(--ink-2)}
+.foot-note.solo{padding-top:40px}
 /* section titles inside bento */
 .bento-wrap{display:flex;flex-direction:column;min-width:0}
 .sec{font-size:15px;font-weight:600;letter-spacing:-.01em;color:var(--ink-2);padding:0 4px;margin:40px 0 14px;line-height:1.2}
@@ -351,4 +363,9 @@ button.tile{font:inherit;color:inherit;text-align:left;cursor:pointer}
   .tile.proj{grid-column:span 2}
   .tl-row{grid-template-columns:14px minmax(0,1fr) auto}
   .tl-stack{display:none}
+}
+@media (max-width:520px){
+  .crow{gap:8px}
+  .crow .round{width:44px;height:44px}
+  .cvbtn{padding:12px 14px;font-size:13px}
 }
